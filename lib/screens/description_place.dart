@@ -2,26 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 class DescriptionPlace extends StatelessWidget{
+
+  String namePlace;
+  String descriptionPlace;
+
+  DescriptionPlace(this.namePlace,this.descriptionPlace);
+
   @override
   Widget build(BuildContext context) {
-    final decriptionText='''
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    ''';
-    final description=Container(
-      margin: EdgeInsets.only(
-        top: 350.0,
-        left: 25.0,
-        right: 10.0
-      ),
-      child: Text(
-        decriptionText,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w900
-        ),
-        textAlign: TextAlign.center,
-      ),
-    );
+
     final title=Row(
       children: <Widget>[
         Container(
@@ -32,18 +21,43 @@ class DescriptionPlace extends StatelessWidget{
           ),
 
           child: Text(
-            "Cicom",
+            namePlace,
             style: TextStyle(
+              fontFamily: "Roboto",
               fontSize: 30.0,
               fontWeight: FontWeight.w900
             ),
             textAlign: TextAlign.center,
           ),
 
-        ),
+        )
       ],
     );
-    return title;
+
+    final description=Container(
+      margin: EdgeInsets.only(
+          top: 20.0,
+          left: 20.0,
+          right: 20.0
+      ),
+      child: Text(
+        this.descriptionPlace,
+        style: TextStyle(
+            fontFamily: "Roboto",
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF56575a)
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+
+    return Column(
+      children: <Widget>[
+        title,
+        description
+      ],
+    );
   }
 
 }

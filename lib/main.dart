@@ -4,6 +4,9 @@ import 'package:cicom/screens/description_place.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final String descriptionText='''
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    ''';
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("Cicom App"),
         ),
-        body: DescriptionPlace(),
+        body: DescriptionPlace("Cicom",descriptionText),
       ),
     );
   }
