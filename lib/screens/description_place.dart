@@ -1,3 +1,4 @@
+import 'package:cicom/screens/button_purple.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
@@ -15,9 +16,8 @@ class DescriptionPlace extends StatelessWidget{
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 320.0,
-            left: 20.0,
-            right: 20.0
+            top: 330.0,
+            left: 40
           ),
 
           child: Text(
@@ -36,7 +36,7 @@ class DescriptionPlace extends StatelessWidget{
 
     final description=Container(
       margin: EdgeInsets.only(
-          top: 20.0,
+          top: 5.0,
           left: 20.0,
           right: 20.0
       ),
@@ -48,14 +48,15 @@ class DescriptionPlace extends StatelessWidget{
             fontWeight: FontWeight.bold,
             color: Color(0xFF56575a)
         ),
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.justify,
       ),
     );
 
     return Column(
       children: <Widget>[
         title,
-        description
+        description,
+        ButtonPurple("Ingresar")
       ],
     );
   }
