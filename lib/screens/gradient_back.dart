@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 class GradientBack extends StatelessWidget{
 
   String title="Cicom";
+  double heightGradient=250;
 
-  GradientBack(this.title);
+  GradientBack(this.title,this.heightGradient);
 //backgroundImage: NetworkImage(snapshot.data[index].thumbnailUrl),
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: heightGradient,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -22,16 +23,19 @@ class GradientBack extends StatelessWidget{
           tileMode: TileMode.clamp
         ),
       ),
-      child: Text(
-        title,
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 30.0,
-          fontFamily: "Roboto",
-          fontWeight: FontWeight.bold
+      child: Container(
+        margin: EdgeInsets.only(top: 15),
+        child: Text(
+          title,
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 30.0,
+              fontFamily: "Roboto",
+              fontWeight: FontWeight.bold
+          ),
         ),
-      ),
-      alignment: Alignment(-0.9,-0.6),
+          alignment: Alignment(-0.9,-0.6),
+        ),
     );
   }
 }
