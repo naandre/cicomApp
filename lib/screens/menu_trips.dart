@@ -3,15 +3,15 @@ import 'home_trips.dart';
 import 'package:cicom/screens/user/profile_trips.dart';
 import 'package:cicom/screens/articles/article_list.dart';
 
-class CicomTrips extends StatefulWidget{
+class MenuTrips extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _CicomTrips();
+    return _MenuTrips();
   }
 
 }
 
-class _CicomTrips extends State<CicomTrips>{
+class _MenuTrips extends State<MenuTrips>{
 
   int indexTap=0;
   final List<Widget> widgetsChildes=[

@@ -1,0 +1,47 @@
+import 'package:cicom/screens/articles/article_list.dart';
+import 'package:cicom/screens/home_trips.dart';
+import 'package:cicom/screens/user/profile_trips.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+class MenuTripsCupertino extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: CupertinoTabScaffold(
+          tabBar: CupertinoTabBar(
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  title: Text("")
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  title: Text("")
+              ),
+            ],
+          ),
+        // ignore: missing_return
+        tabBuilder: (BuildContext context,int index){
+            // ignore: missing_return
+            switch (index){
+              case 0:
+                return CupertinoTabView(builder: (BuildContext context)=>HomeTrips());
+                break;
+              case 1:
+                return CupertinoTabView(builder: (BuildContext context)=>ArticleList());
+                break;
+              case 2:
+                return CupertinoTabView(builder: (BuildContext context)=>ProfileTrips());
+                break;
+            }
+        },
+      ),
+    );
+  }
+
+}
