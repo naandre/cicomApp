@@ -1,15 +1,10 @@
-import 'package:cicom/screens/articles/article_list.dart';
 import 'package:flutter/material.dart';
-import 'package:cicom/screens/description_place.dart';
-import 'package:cicom/screens/gradient_back.dart';
-import 'package:cicom/screens/header_appbar.dart';
+import 'package:cicom/screens/cicom_trips.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final String descriptionText='''
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    ''';
+
   // This widget is the root of your application. #0073a1
   @override
   Widget build(BuildContext context) {
@@ -18,18 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body:Stack(
-          children: <Widget>[
-            ListView(
-              children: <Widget>[
-                DescriptionPlace("Bienvenido a Cicom",descriptionText),
-              ],
-            ),
-            HeaderAppBar(),
-          ],
-        ),
-      ),
+      home: CicomTrips(),
     );
   }
 }
