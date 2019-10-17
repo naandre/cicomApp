@@ -1,6 +1,6 @@
 import 'package:cicom/screens/articles/article_list.dart';
+import 'package:cicom/screens/auth/login.dart';
 import 'package:cicom/screens/home_trips.dart';
-import 'package:cicom/screens/user/profile_trips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -36,7 +36,7 @@ class MenuTripsCupertino extends StatelessWidget{
                 return CupertinoTabView(builder: (BuildContext context)=>ArticleList());
                 break;
               case 2:
-                return CupertinoTabView(builder: (BuildContext context)=>ProfileTrips());
+                return CupertinoTabView(builder: (BuildContext context)=>Login());
                 break;
             }
         },

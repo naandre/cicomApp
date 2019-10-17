@@ -55,8 +55,7 @@ class DescriptionPlace extends StatelessWidget{
     return Column(
       children: <Widget>[
         title,
-        description,
-        ButtonPurple("Ingresar")
+        description
       ],
     );
   }
