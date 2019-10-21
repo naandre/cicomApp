@@ -58,7 +58,7 @@ class _Login extends State<Login>{
     final Size creenSize=MediaQuery.of(context).size;
     return Stack(
       children: <Widget>[
-        GradientBack("Login",100),
+        GradientBack("Ingresar",100),
         Container(
           margin: EdgeInsets.only(
             top: 120,
