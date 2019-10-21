@@ -40,6 +40,8 @@ class _ResetPassword extends State <ResetPassword>{
 
       print('Printing the reset data.');
       print('Email: ${_data.email}');
+
+      Navigator.of(context).pop();
     }
   }
 
@@ -97,6 +99,37 @@ class _ResetPassword extends State <ResetPassword>{
                       ),
                       onPressed: this.submit,
                       color: Colors.blue,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: (){
+                    Navigator.of(context).pop();
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(top: 30.0, left: 20, right: 20.0),
+                      height: 40.0,
+                      width: 80.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30.0),
+                          gradient: LinearGradient(
+                              colors: [
+                                Color(0xFF0288D1),
+                                Color(0xFF01579B),
+                              ],
+                              begin: FractionalOffset(0.2, 0.0),
+                              end: FractionalOffset(1.0, 0.6),
+                              stops: [0.0, 0.8],
+                              tileMode: TileMode.clamp)),
+                      child: Center(
+                        child: Text(
+                          "Cancelar",
+                          style: TextStyle(
+                              fontSize: 18.0,
+                              fontFamily: "Roboto",
+                              color: Colors.white
+                          ),
+                        ),
+                      ),
                     ),
                   )
                 ],

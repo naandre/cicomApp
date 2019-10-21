@@ -6,7 +6,38 @@ class ProfileAppBar extends StatelessWidget{
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        GradientBack("Mi Perfil", 250)
+        GradientBack("Mi Perfil", 250),
+        InkWell(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Container(
+            margin: EdgeInsets.only(top: 210.0, left: 20, right: 20.0),
+            height: 20.0,
+            width: 80.0,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                gradient: LinearGradient(
+                    colors: [
+                      Colors.blueAccent,
+                      Colors.blue,
+                    ],
+                    begin: FractionalOffset(0.9, 0.0),
+                    end: FractionalOffset(1.0, 0.6),
+                    stops: [0.0, 0.8],
+                    tileMode: TileMode.clamp)),
+            child: Center(
+              child: Text(
+                "Salir",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: "Roboto",
+                    color: Colors.white
+                ),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
