@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cicom/screens/articles/article_list.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
 
@@ -54,6 +55,22 @@ class _SearchTrips extends State<SearchTrips>{
   String _validateDate(DateTime value){
     if(value.toString().isEmpty){
       return "La correo Fecha de Publicación no puede estar vació";
+    }
+  }
+
+  submit(){
+    if(this._fromKey.currentState.validate()){
+      this._fromKey.currentState.save();
+
+      print('Printing the login data.');
+      print('Filtro1: ${_data.filter1}');
+      print('Valor 1: ${_data.value1}');
+      print('Filtro2: ${_data.filter2}');
+      print('Valor 2: ${_data.value2}');
+      print('Fecha: ${_data.date}');
+
+      Route route = MaterialPageRoute(builder: (context) => ArticleList());
+      Navigator.of(context).push(route);
     }
   }
 
@@ -165,6 +182,36 @@ class _SearchTrips extends State<SearchTrips>{
                   ),
                   onTap: ()=>_selectDate(context),
                 ),
+                Container(
+                  margin: EdgeInsets.only(top: 30.0, left: 20, right: 20.0),
+                  height: 50.0,
+                  width: 180.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF0288D1),
+                            Color(0xFF01579B),
+                          ],
+                          begin: FractionalOffset(0.2, 0.0),
+                          end: FractionalOffset(1.0, 0.6),
+                          stops: [0.0, 0.6],
+                          tileMode: TileMode.clamp)),
+                  child: RaisedButton(
+                    child: Center(
+                      child: Text(
+                        'Filtrar',
+                        style: TextStyle(
+                            fontSize: 18.0,
+                            fontFamily: "Roboto",
+                            color: Colors.white
+                        ),
+                      ),
+                    ),
+                    onPressed: this.submit,
+                    color: Colors.blue,
+                  ),
+                )
               ],
             ),
           ),
