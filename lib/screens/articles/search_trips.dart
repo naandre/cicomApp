@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
 
@@ -18,13 +20,29 @@ class _SearchData{
 
 class _SearchTrips extends State<SearchTrips>{
   final GlobalKey<FormState> _fromKey= GlobalKey<FormState>();
+  _SearchData _data=_SearchData();
+
   List<DropdownMenuItem<String>> _filtersList=<String>['Filtro 1','Filtro 2','Filtro 3','Filtro 4','Filtro 5','Filtro 6','Filtro 7'].map<DropdownMenuItem<String>>((String value){
     return DropdownMenuItem<String>(value: value,child: Text(value),);}).toList();
 
   List<DropdownMenuItem<String>> _valuesList=['value 1','value 2','value 3','value 4','value 5','value 6','value 7','value 8',].map<DropdownMenuItem<String>>((String value){
     return DropdownMenuItem<String>(value: value,child: Text(value),);}).toList();
 
-  _SearchData _data=_SearchData();
+  DateTime selectedDate=DateTime.now();
+
+  Future<Null> _selectDate(BuildContext context) async{
+    final DateTime picker= await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(1990),
+        lastDate: DateTime.now());
+
+    if(picker!=null && picker!=selectedDate){
+      setState(() {
+        selectedDate=picker;
+      });
+    }
+  }
 
   @override
   void initState(){
@@ -130,11 +148,22 @@ class _SearchTrips extends State<SearchTrips>{
                   },
                   items: this._valuesList,
                 ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text("${selectedDate.toLocal()}"),
+                    SizedBox(height: 20,),
+                    RaisedButton(
+                      onPressed: ()=>_selectDate(context),
+                      child: Text('Seleccione fecha'),
+                    )
+                  ],
+                ),
                 TextFormField(
-                  keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     labelText: "Fecha de Publicación"
                   ),
+                  onTap: ()=>_selectDate(context),
                 ),
               ],
             ),
