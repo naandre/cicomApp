@@ -11,6 +11,27 @@ class ArticleList extends StatelessWidget{
       children: <Widget>[
         GradientBack("Artículos", 100),
         Container(
+          margin: EdgeInsets.only(top: 70),
+          height: 20,
+          width: 80,
+          child: RaisedButton(
+            child: Center(
+              child: Text(
+                'Nuevo filtro',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontFamily: "Roboto",
+                    color: Colors.white
+                ),
+              ),
+            ),
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
+            color: Colors.indigo,
+          ),
+        ),
+        Container(
           margin: EdgeInsets.only(
               top: 100
           ),

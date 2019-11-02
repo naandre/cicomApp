@@ -1,8 +1,8 @@
-import 'dart:math';
-
 import 'package:cicom/screens/articles/article_list.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class SearchTrips extends StatefulWidget{
   @override
@@ -16,7 +16,8 @@ class _SearchData{
    String value1='';
    String filter2='';
    String value2='';
-   DateTime date;
+   DateTime date=DateTime.now();
+//   String dateSelect=DateFormat('yyyy-MM-dd').format(date);
 }
 
 class _SearchTrips extends State<SearchTrips>{
@@ -29,18 +30,17 @@ class _SearchTrips extends State<SearchTrips>{
   List<DropdownMenuItem<String>> _valuesList=['value 1','value 2','value 3','value 4','value 5','value 6','value 7','value 8',].map<DropdownMenuItem<String>>((String value){
     return DropdownMenuItem<String>(value: value,child: Text(value),);}).toList();
 
-  DateTime selectedDate=DateTime.now();
-
   Future<Null> _selectDate(BuildContext context) async{
     final DateTime picker= await showDatePicker(
         context: context,
-        initialDate: selectedDate,
+//        locale: Locale.fromSubtags(languageCode: 'es'),
+        initialDate: this._data.date,
         firstDate: DateTime(1990),
         lastDate: DateTime.now());
 
-    if(picker!=null && picker!=selectedDate){
+    if(picker!=null && picker!=this._data.date){
       setState(() {
-        selectedDate=picker;
+        this._data.date=picker;
       });
     }
   }
@@ -165,22 +165,16 @@ class _SearchTrips extends State<SearchTrips>{
                   },
                   items: this._valuesList,
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text("${selectedDate.toLocal()}"),
-                    SizedBox(height: 20,),
-                    RaisedButton(
-                      onPressed: ()=>_selectDate(context),
-                      child: Text('Seleccione fecha'),
-                    )
-                  ],
-                ),
                 TextFormField(
                   decoration: InputDecoration(
-                    labelText: "Fecha de Publicación"
+                    labelText: DateFormat('yyyy-MM-dd').format(this._data.date),
+                    hintText: "Fecha de Publicación",
+                    icon: Icon(Icons.calendar_today,color: Colors.blue,),
                   ),
-                  onTap: ()=>_selectDate(context),
+                  onTap: (){
+                    FocusScope.of(context).requestFocus(FocusNode());
+                    _selectDate(context);
+                  },
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 30.0, left: 20, right: 20.0),
