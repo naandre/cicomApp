@@ -1,8 +1,7 @@
-import 'package:cicom/screens/articles/article_list.dart';
+import 'package:cicom/screens/articles/article_list_trips.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 class SearchTrips extends StatefulWidget{
   @override
@@ -69,7 +68,7 @@ class _SearchTrips extends State<SearchTrips>{
       print('Valor 2: ${_data.value2}');
       print('Fecha: ${_data.date}');
 
-      Route route = MaterialPageRoute(builder: (context) => ArticleList());
+      Route route = MaterialPageRoute(builder: (context) => ArticleListTrips());
       Navigator.of(context).push(route);
     }
   }

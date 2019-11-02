@@ -1,3 +1,4 @@
+import 'package:cicom/screens/articles/article_list.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
 
@@ -6,13 +7,13 @@ class ProfileAppBar extends StatelessWidget{
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        GradientBack("Mi Perfil", 250),
+        GradientBack("Mi Perfil", 200),
         InkWell(
           onTap: (){
             Navigator.of(context).pop();
           },
           child: Container(
-            margin: EdgeInsets.only(top: 210.0, left: 20, right: 20.0),
+            margin: EdgeInsets.only(top: 160.0, left: 20, right: 20.0),
             height: 20.0,
             width: 80.0,
             decoration: BoxDecoration(
@@ -36,6 +37,26 @@ class ProfileAppBar extends StatelessWidget{
                 ),
               ),
             ),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(
+              top: 125
+          ),
+          child: ArticleList(),
+        ),
+        Container(
+          margin: EdgeInsets.only(
+              top: 210,
+              left: 20
+          ),
+          child: Text(
+              "Mis últimos artículos subidos",
+              style: TextStyle(
+                fontSize: 21,
+                fontFamily: "Roboto",
+                backgroundColor: Colors.white
+              ),
           ),
         )
       ],

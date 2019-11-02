@@ -67,7 +67,7 @@ class Article extends StatelessWidget{
       width: 60.0,
       height: 60.0,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
+        shape: BoxShape.rectangle,
         image: DecorationImage(
           fit: BoxFit.scaleDown,
           image: AssetImage(pathImage)
