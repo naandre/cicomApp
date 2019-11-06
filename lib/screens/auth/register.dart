@@ -103,8 +103,8 @@ class _Register extends State<Register>{
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        hintText: 'Nombre',
-                        labelText: 'tus nombres'
+                        hintText: 'tus nombres',
+                        labelText: 'Nombre'
                     ),
                     validator: this._validateName,
                     onSaved: (String value){
@@ -114,8 +114,8 @@ class _Register extends State<Register>{
                   TextFormField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        hintText: 'Apellido',
-                        labelText: 'tus apellidos'
+                        hintText: 'tus apellidos',
+                        labelText: 'Apellido'
                     ),
                     validator: this._validateLastName,
                     onSaved: (String value){
@@ -147,8 +147,8 @@ class _Register extends State<Register>{
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
-                        hintText: 'Repite la contraseña',
-                        labelText: 'Ingrese contraseña'
+                        hintText: 'Contraseña',
+                        labelText: 'Repite la contraseña'
                     ),
                     validator: this._validateRepeatPassword,
                     onSaved: (String value){
