@@ -1,3 +1,4 @@
+import 'package:cicom/screens/auth/register.dart';
 import 'package:cicom/screens/auth/reset_password.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:cicom/screens/user/profile_appbar.dart';
@@ -133,8 +134,6 @@ class _Login extends State<Login>{
                 InkWell(
                   onTap: (){
                     changeView(ResetPassword());
-//                    Route route = MaterialPageRoute(builder: (context) => ResetPassword());
-//                    Navigator.of(context).push(route);
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 30.0, left: 20, right: 20.0),
@@ -154,6 +153,37 @@ class _Login extends State<Login>{
                     child: Center(
                       child: Text(
                         "¿Recordar contraseña?",
+                        style: TextStyle(
+                            fontSize: 18.0,
+                            fontFamily: "Roboto",
+                            color: Colors.black
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: (){
+                    changeView(Register());
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: 30.0, left: 20, right: 20.0),
+                    height: 40.0,
+                    width: 80.0,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(0.0),
+                        gradient: LinearGradient(
+                            colors: [
+                              Colors.blueGrey,
+                              Colors.blue,
+                            ],
+                            begin: FractionalOffset(0.2, 0.0),
+                            end: FractionalOffset(1.0, 0.6),
+                            stops: [0.0, 0.8],
+                            tileMode: TileMode.clamp)),
+                    child: Center(
+                      child: Text(
+                        "Registrarme",
                         style: TextStyle(
                             fontSize: 18.0,
                             fontFamily: "Roboto",
