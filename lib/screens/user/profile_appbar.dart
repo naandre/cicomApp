@@ -1,4 +1,5 @@
 import 'package:cicom/screens/articles/article_list.dart';
+import 'package:cicom/screens/articles/new_trips.dart';
 import 'package:cicom/screens/gradient_back.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,38 @@ class ProfileAppBar extends StatelessWidget{
             child: Center(
               child: Text(
                 "Salir",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: "Roboto",
+                    color: Colors.white
+                ),
+              ),
+            ),
+          ),
+        ),
+        InkWell(
+          onTap: (){
+            Route route = MaterialPageRoute(builder: (context) => NewTrips());
+            Navigator.of(context).push(route);
+          },
+          child: Container(
+            margin: EdgeInsets.only(top: 160.0, left: 110, right: 20.0),
+            height: 20.0,
+            width: 150.0,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30.0),
+                gradient: LinearGradient(
+                    colors: [
+                      Colors.blueAccent,
+                      Colors.blue,
+                    ],
+                    begin: FractionalOffset(0.9, 0.0),
+                    end: FractionalOffset(1.0, 0.6),
+                    stops: [0.0, 0.8],
+                    tileMode: TileMode.clamp)),
+            child: Center(
+              child: Text(
+                "Cargar Archivo",
                 style: TextStyle(
                     fontSize: 18.0,
                     fontFamily: "Roboto",
