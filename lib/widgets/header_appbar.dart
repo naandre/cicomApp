@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cicom/screens/gradient_back.dart';
-import 'package:cicom/screens/card_image_list.dart';
+import 'package:cicom/widgets/gradient_back.dart';
+import 'package:cicom/widgets/card_image_list.dart';
 
 class HeaderAppBar extends StatelessWidget{
   @override

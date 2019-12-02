@@ -1,7 +1,7 @@
-import 'package:cicom/screens/auth/register.dart';
-import 'package:cicom/screens/auth/reset_password.dart';
-import 'package:cicom/screens/gradient_back.dart';
-import 'package:cicom/screens/user/profile_appbar.dart';
+import 'package:cicom/Auth/ui/screens/register.dart';
+import 'package:cicom/Auth/ui/screens/reset_password.dart';
+import 'package:cicom/widgets/gradient_back.dart';
+import 'package:cicom/User/ui/widgets/profile_appbar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget{

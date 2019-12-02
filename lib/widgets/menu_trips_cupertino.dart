@@ -1,5 +1,5 @@
-import 'package:cicom/screens/articles/search_trips.dart';
-import 'package:cicom/screens/auth/login.dart';
+import 'package:cicom/Article/ui/screens/search_trips.dart';
+import 'package:cicom/Auth/ui/screens/login.dart';
 import 'package:cicom/screens/home_trips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

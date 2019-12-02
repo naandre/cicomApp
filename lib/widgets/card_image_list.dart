@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:cicom/screens/card_image.dart';
+import 'package:cicom/widgets/card_image.dart';
 class CardImageList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

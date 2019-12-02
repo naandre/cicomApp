@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_trips.dart';
-import 'package:cicom/screens/user/profile_trips.dart';
-import 'package:cicom/screens/articles/article_list.dart';
+import 'package:cicom/User/ui/screens/profile_trips.dart';
+import 'package:cicom/Article/ui/widgets/article_list.dart';
 
 class MenuTrips extends StatefulWidget{
   @override

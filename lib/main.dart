@@ -1,4 +1,4 @@
-import 'package:cicom/screens/menu_trips_cupertino.dart';
+import 'package:cicom/widgets/menu_trips_cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

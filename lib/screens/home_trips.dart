@@ -1,5 +1,5 @@
-import 'package:cicom/screens/description_place.dart';
-import 'package:cicom/screens/header_appbar.dart';
+import 'package:cicom/widgets/description_place.dart';
+import 'package:cicom/widgets/header_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeTrips extends StatelessWidget{

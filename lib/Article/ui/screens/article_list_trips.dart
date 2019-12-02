@@ -1,5 +1,5 @@
-import 'package:cicom/screens/articles/article_list.dart';
-import 'package:cicom/screens/gradient_back.dart';
+import 'package:cicom/Article/ui/widgets/article_list.dart';
+import 'package:cicom/widgets/gradient_back.dart';
 import 'package:flutter/material.dart';
 
 class ArticleListTrips extends StatelessWidget{

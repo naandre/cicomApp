@@ -1,4 +1,4 @@
-import 'package:cicom/screens/user/profile_appbar.dart';
+import 'package:cicom/User/ui/widgets/profile_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ProfileTrips extends StatelessWidget{
