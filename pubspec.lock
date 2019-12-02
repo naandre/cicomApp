@@ -65,6 +65,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  generic_bloc_provider:
+    dependency: "direct main"
+    description:
+      name: generic_bloc_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.9"
   graphql:
     dependency: transitive
     description:
