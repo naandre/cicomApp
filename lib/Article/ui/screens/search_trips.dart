@@ -23,7 +23,7 @@ class _SearchTrips extends State<SearchTrips>{
   final GlobalKey<FormState> _fromKey= GlobalKey<FormState>();
   _SearchData _data=_SearchData();
 
-  List<DropdownMenuItem<String>> _filtersList=<String>['Filtro 1','Filtro 2','Filtro 3','Filtro 4','Filtro 5','Filtro 6','Filtro 7'].map<DropdownMenuItem<String>>((String value){
+  List<DropdownMenuItem<String>> _filtersList=<String>['Título','Categoría','Línea de Investigación','Autor'].map<DropdownMenuItem<String>>((String value){
     return DropdownMenuItem<String>(value: value,child: Text(value),);}).toList();
 
   List<DropdownMenuItem<String>> _valuesList=['value 1','value 2','value 3','value 4','value 5','value 6','value 7','value 8',].map<DropdownMenuItem<String>>((String value){

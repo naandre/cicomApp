@@ -15,13 +15,14 @@ class Article extends StatelessWidget{
   Widget build(BuildContext context) {
     final titleArticle=Container(
       margin: EdgeInsets.only(
-        left: 20.0
+        left: 10.0,
+        right: 30
       ),
       child: Text(
         title,
         textAlign: TextAlign.left,
         style: TextStyle(
-          fontSize: 19.0,
+          fontSize: 15.0,
           fontFamily: "Roboto"
         ),
       ),
