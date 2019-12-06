@@ -29,6 +29,12 @@ dependencies:
   generic_bloc_provider: ^1.0.9
   graphql_flutter: ^2.0.0
   shared_preferences: ^0.5.4+8
+  flutter_launcher_icons: ^0.7.4
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path: "assets/img/icon.png"
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +84,6 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/img/article.png
-    - assets/img/icon.png
 
   fonts:
     - family: Roboto

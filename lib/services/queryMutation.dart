@@ -10,4 +10,18 @@ class QueryMutation{
       }
      """;
   }
+
+  String getLastCongress(){
+    return """
+      query{
+        lascongress{
+          id
+          name
+          url
+          file
+        }
+      }
+     """;
+  }
+
 }

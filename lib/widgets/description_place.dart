@@ -4,9 +4,10 @@ import 'package:flutter/painting.dart';
 class DescriptionPlace extends StatelessWidget{
 
   String namePlace;
-  String descriptionPlace;
+  String url;
+  String file;
 
-  DescriptionPlace(this.namePlace,this.descriptionPlace);
+  DescriptionPlace(this.namePlace,this.url,this.file);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +16,9 @@ class DescriptionPlace extends StatelessWidget{
       children: <Widget>[
         Container(
           margin: EdgeInsets.only(
-            top: 330.0,
-            left: 40
+            top: 10.0,
+            left: 30
           ),
-
           child: Text(
             namePlace,
             style: TextStyle(
@@ -36,18 +36,19 @@ class DescriptionPlace extends StatelessWidget{
     final description=Container(
       margin: EdgeInsets.only(
           top: 5.0,
-          left: 20.0,
-          right: 20.0
       ),
       child: Text(
-        this.descriptionPlace,
+        """
+          url: ${this.url.toString()} 
+          archivos: ${this.url.toString()} 
+        """,
         style: TextStyle(
             fontFamily: "Roboto",
             fontSize: 16.0,
             fontWeight: FontWeight.bold,
             color: Color(0xFF56575a)
         ),
-        textAlign: TextAlign.justify,
+        textAlign: TextAlign.left,
       ),
     );
 
