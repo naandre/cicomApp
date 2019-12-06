@@ -1,4 +1,5 @@
 import 'package:cicom/User/bloc/bloc_user.dart';
+import 'package:cicom/services/graphqlConf.dart';
 import 'package:cicom/widgets/menu_trips_cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -12,14 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final HttpLink httpLink=HttpLink(uri: "http://cicom.miscursosweb.com.co/graphql");
-    ValueNotifier<GraphQLClient> client=ValueNotifier(GraphQLClient(
-      cache: InMemoryCache(),
-      link: httpLink,
-    ));
+    GraphQLConfiguration graphQLConfiguration=GraphQLConfiguration();
 
     return GraphQLProvider(
-      client: client,
+      client: graphQLConfiguration.client,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Cicom App',

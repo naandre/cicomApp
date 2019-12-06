@@ -28,6 +28,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   generic_bloc_provider: ^1.0.9
   graphql_flutter: ^2.0.0
+  shared_preferences: ^0.5.4+8
 
 dev_dependencies:
   flutter_test:
