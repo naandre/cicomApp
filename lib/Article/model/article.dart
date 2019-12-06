@@ -1,17 +1,20 @@
-class Article{
-  String title;
-  String authors;
-  String description;
-  String image;
+class ArticleModel{
+  /* Mapeo del modelo */
+  ArticleModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        title= json['title'],
+        authors= "Autor 1, autor 2",
+//        authors= json['authors'],
+        description= json['description'],
+        file= json['file']
 
-  Article({this.title,this.authors,this.description,this.image});
+  ;
 
-  factory Article.fromJson(Map json){
-    return Article(
-      title: json['title'] as String,
-      authors: json['authors'] as String,
-      description: json['description'] as String,
-      image: json['image'] as String,
-    );
-  }
+  /* Definicion de tipos */
+  final int id;
+  final String title;
+  final String authors;
+  final String description;
+  final String file;
+
 }

@@ -24,4 +24,41 @@ class QueryMutation{
      """;
   }
 
+  String getCategories(){
+    return """
+      query{
+        categories{
+          id
+          name
+          state
+        }
+      }
+     """;
+  }
+
+  String getLines(){
+    return """
+      query{
+        lines{
+          id
+          name
+          state
+        }
+      }
+     """;
+  }
+
+  String getArticles(){
+    return """
+      query{
+        articles{
+          id
+          title
+          description
+          file
+        }
+      }
+     """;
+  }
+
 }

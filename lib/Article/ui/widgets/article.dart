@@ -7,8 +7,9 @@ class Article extends StatelessWidget{
   String title = "Articulo 1";
   String authors = "Autor 1, Autor 2";
   String descriptions = "";
+  String file = "";
 
-  Article(this.title,this.authors,this.descriptions);
+  Article(this.title,this.authors,this.descriptions,this.file);
 
   @override
   Widget build(BuildContext context) {

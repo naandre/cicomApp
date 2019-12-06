@@ -19,10 +19,10 @@ class MenuTripsCupertino extends StatelessWidget{
                   icon: Icon(Icons.search),
                   title: Text("")
               ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
-                  title: Text("")
-              ),
+//              BottomNavigationBarItem(
+//                  icon: Icon(Icons.person),
+//                  title: Text("")
+//              ),
             ],
           ),
         // ignore: missing_return
@@ -35,9 +35,9 @@ class MenuTripsCupertino extends StatelessWidget{
               case 1:
                 return CupertinoTabView(builder: (BuildContext context)=>SearchTrips());
                 break;
-              case 2:
-                return CupertinoTabView(builder: (BuildContext context)=>Login());
-                break;
+//              case 2:
+//                return CupertinoTabView(builder: (BuildContext context)=>Login());
+//                break;
             }
         },
       ),
