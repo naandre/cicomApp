@@ -55,7 +55,7 @@ class DescriptionPlace extends StatelessWidget{
             
 ___________________________________________________________________
             
-            """,
+""",
               style: new TextStyle(
                   fontFamily: "Roboto",
                   fontSize: 10.0,
@@ -68,7 +68,7 @@ ___________________________________________________________________
                   fontFamily: "Roboto",
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.indigo
+                  color: Colors.blue
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap=(){launch("http://cicom.miscursosweb.com.co/public/public/files/lastcongress/${this.file}");}
