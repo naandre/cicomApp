@@ -25,6 +25,7 @@ class Article extends StatelessWidget{
           fontSize: 15.0,
           fontFamily: "Roboto"
         ),
+        softWrap: true,
       ),
     );
 

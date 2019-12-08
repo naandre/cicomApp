@@ -12,12 +12,9 @@ class DescriptionPlace extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final title=Row(
-      children: <Widget>[
-        Container(
+    final title=Container(
           margin: EdgeInsets.only(
             top: 10.0,
-            left: 30
           ),
           child: Text(
             namePlace,
@@ -28,10 +25,7 @@ class DescriptionPlace extends StatelessWidget{
             ),
             textAlign: TextAlign.center,
           ),
-
-        )
-      ],
-    );
+        );
 
     final description=Container(
       margin: EdgeInsets.only(
