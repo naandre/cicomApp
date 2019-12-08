@@ -211,7 +211,12 @@ class _SearchTrips extends State<SearchTrips>{
       print('Valor 2: ${_data.value2}');
       print('Fecha: ${_data.date}');
 
-      Route route = MaterialPageRoute(builder: (context) => ArticleListTrips());
+      Route route = MaterialPageRoute(builder: (context) => ArticleListTrips(
+        filter1: _data.filter1=='Titulo'?'title':'category',
+        value1: _data.value1,
+        filter2: _data.filter2=='Línea de Investigación'?'line':'author',
+        value2: _data.value2,
+      ));
       Navigator.of(context).push(route);
     }
   }

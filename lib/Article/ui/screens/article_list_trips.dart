@@ -2,8 +2,17 @@ import 'package:cicom/Article/ui/widgets/article_list.dart';
 import 'package:cicom/widgets/gradient_back.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ArticleListTrips extends StatelessWidget{
-  @override
+
+  String filter1;
+  String value1;
+  String filter2;
+  String value2;
+
+  ArticleListTrips({this.filter1,this.value1,this.filter2,this.value2});
+
+ @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
