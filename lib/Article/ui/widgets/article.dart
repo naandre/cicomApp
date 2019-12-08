@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Article extends StatelessWidget{
 
@@ -91,11 +92,23 @@ class Article extends StatelessWidget{
       ],
     );
 
-    return Column(
-      children: <Widget>[
-        articleDetail,
-        descriptionArticle
-      ],
+    return InkWell(
+      onTap: (){launch("http://cicom.miscursosweb.com.co/public/public/files/articles/${this.file}");},
+      child: Column(
+        children: <Widget>[
+          articleDetail,
+          descriptionArticle,
+          Text(
+            "Abrir",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 13.0,
+                fontFamily: "Roboto",
+                color: Colors.blue
+            ),
+          )
+        ],
+      ),
     );
   }
 

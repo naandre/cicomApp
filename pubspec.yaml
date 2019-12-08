@@ -30,6 +30,7 @@ dependencies:
   graphql_flutter: ^2.0.0
   shared_preferences: ^0.5.4+8
   flutter_launcher_icons: ^0.7.4
+  url_launcher:
 
 flutter_icons:
   ios: true
