@@ -217,6 +217,8 @@ class _SearchTrips extends State<SearchTrips>{
         filter2: _data.filter2=='Línea de Investigación'?'line':'author',
         value2: _data.value2,
       ));
+      _data.filter1=_data.filter2=null;
+      _data.value1=_data.value2='';
       Navigator.of(context).push(route);
     }
   }
