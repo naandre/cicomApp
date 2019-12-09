@@ -51,6 +51,8 @@ class QueryMutation{
   // ignore: avoid_init_to_null
   String getArticles({filter1,value1,filter2,value2,publication}){
     String filter='';
+    var dateNow=DateTime.now();
+    String dateNowString="${dateNow.year}-${dateNow.month}-${dateNow.day}";
 
     print(filter1);
     print(value1);
@@ -60,7 +62,7 @@ class QueryMutation{
     print(filter1!=null && value1!=null);
     if(filter1!=null && value1!=null) filter+='$filter1:$value1,';
     if(filter2!=null && value2!=null) filter+='$filter2:$value2,';
-    if(publication!=null) filter+='publication_date:"$publication"';
+    if(publication!=null && dateNowString!=publication) filter+='publication_date:"$publication"';
 
     if(filter.length>0) filter="($filter)";
     print(filter);
