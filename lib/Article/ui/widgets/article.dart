@@ -5,10 +5,10 @@ import 'package:url_launcher/url_launcher.dart';
 class Article extends StatelessWidget{
 
   String pathImage ="assets/img/article.png";
-  String title = "Articulo 1";
-  String authors = "Autor 1, Autor 2";
-  String descriptions = "";
-  String file = "";
+  String title;
+  String authors;
+  String descriptions;
+  String file;
 
   Article(this.title,this.authors,this.descriptions,this.file);
 

@@ -6,13 +6,28 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'article.dart';
 
 class ArticleList extends StatefulWidget{
+  String filter1;
+  String value1;
+  String filter2;
+  String value2;
+
+  ArticleList({this.filter1,this.value1,this.filter2,this.value2});
+
   @override
   State<StatefulWidget> createState() {
-    return _handleState();
+    return _handleState(filter1: this.filter1,value1: this.value1,filter2: this.value2);
   }
 }
 
 class _handleState extends State<ArticleList>{
+
+  String filter1;
+  String value1;
+  String filter2;
+  String value2;
+
+  _handleState({this.filter1,this.value1,this.filter2,this.value2});
+
   GraphQLConfiguration graphQLConfiguration=GraphQLConfiguration();
 
   @override
@@ -23,8 +38,8 @@ class _handleState extends State<ArticleList>{
   Future<List<Map<String, dynamic>>> queryArticles() async{
     QueryMutation queryMutation=QueryMutation();
     GraphQLClient _client=graphQLConfiguration.clientToQuery();
-    final QueryResult data= await _client.query(QueryOptions(document: queryMutation.getArticles()));
-    final List<Map<String, dynamic>> articles= data.data['articles'].cast<Map<String, dynamic>>();
+    final QueryResult data= await _client.query(QueryOptions(document: queryMutation.getArticles(filter1: this.filter1,value1: this.value1,filter2: this.filter2,value2: this.value2)));
+    final List<Map<String, dynamic>> articles= data.data['articleFilter'].cast<Map<String, dynamic>>();
     return articles;
   }
 
@@ -34,7 +49,7 @@ class _handleState extends State<ArticleList>{
       primary: false,
       children: page.map<Widget>((Map<String, dynamic> item){
         final ArticleModel articleModel=ArticleModel.fromJson(item);
-        return Article(articleModel.title,articleModel.authors,articleModel.description,articleModel.file);
+        return Article(articleModel.title,articleModel.authorsToString(),articleModel.description,articleModel.file);
       }).toList(),
     );
   }

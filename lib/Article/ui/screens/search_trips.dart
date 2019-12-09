@@ -89,7 +89,7 @@ class _SearchTrips extends State<SearchTrips>{
         _data.value1=value;
       },
     ) : FutureBuilder<List<Map<String, dynamic>>>(
-        future: queryLines(),
+        future: queryCategories(),
         builder: (BuildContext context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot){
           if(snapshot.connectionState==ConnectionState.waiting){
             return SizedBox(
@@ -136,7 +136,7 @@ class _SearchTrips extends State<SearchTrips>{
         _data.value2=value;
       },
     ) : FutureBuilder<List<Map<String, dynamic>>>(
-        future: queryCategories(),
+        future: queryLines(),
         builder: (BuildContext context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot){
           if(snapshot.connectionState==ConnectionState.waiting){
             return SizedBox(
@@ -217,7 +217,6 @@ class _SearchTrips extends State<SearchTrips>{
         filter2: _data.filter2=='Línea de Investigación'?'line':'author',
         value2: _data.value2,
       ));
-//      _data.filter1=_data.filter2=null;
       _data.value1=null;
       _data.value2=null;
       Navigator.of(context).push(route);
