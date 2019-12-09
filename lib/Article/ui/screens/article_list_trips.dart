@@ -6,14 +6,16 @@ import 'package:flutter/material.dart';
 class ArticleListTrips extends StatelessWidget{
 
   String filter1;
-  String value1;
+  var value1;
   String filter2;
-  String value2;
+  var value2;
+  String publication;
 
-  ArticleListTrips({this.filter1,this.value1,this.filter2,this.value2});
+  ArticleListTrips({this.filter1,this.value1,this.filter2,this.value2,this.publication});
 
  @override
   Widget build(BuildContext context) {
+   print("value2: ${this.value2}");
     return Stack(
       children: <Widget>[
         GradientBack("Artículos", 100),
@@ -38,7 +40,7 @@ class ArticleListTrips extends StatelessWidget{
             color: Colors.indigo,
           ),
         ),
-        ArticleList(),
+        ArticleList(filter1: this.filter1,value1: this.value1,filter2: this.filter2,value2: this.value2,publication:this.publication),
       ],
     );
   }

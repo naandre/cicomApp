@@ -49,15 +49,22 @@ class QueryMutation{
   }
 
   // ignore: avoid_init_to_null
-  String getArticles({filter1=null,value1=null,filter2=null,value2=null,publication=null}){
+  String getArticles({filter1,value1,filter2,value2,publication}){
     String filter='';
 
-    if(filter1 && value1) filter+='$filter1:$value1,';
-    if(filter2 && value2) filter+='$filter2:$value2,';
-    if(publication) filter+='publication_date:$publication,';
+    print(filter1);
+    print(value1);
+    print(filter2);
+    print(value2);
+    print(publication);
+    print(filter1!=null && value1!=null);
+    if(filter1!=null && value1!=null) filter+='$filter1:$value1,';
+    if(filter2!=null && value2!=null) filter+='$filter2:$value2,';
+    if(publication!=null) filter+='publication_date:"$publication"';
 
     if(filter.length>0) filter="($filter)";
-    return """
+    print(filter);
+    var query= """
       query{
         articleFilter$filter{
           id
@@ -71,6 +78,8 @@ class QueryMutation{
         }
       }
      """;
+    print(query);
+    return query;
   }
 
 }

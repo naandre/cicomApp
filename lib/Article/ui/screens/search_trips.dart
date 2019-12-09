@@ -117,7 +117,7 @@ class _SearchTrips extends State<SearchTrips>{
                   _data.value1=newValue;
                 });
               },
-              items: _buildLinesMenuItems(snapshot.data),
+              items: _buildCategoriesMenuItems(snapshot.data),
               hint: Text('Selecciona una opción...'),
             );
           }
@@ -141,7 +141,7 @@ class _SearchTrips extends State<SearchTrips>{
           if(snapshot.connectionState==ConnectionState.waiting){
             return SizedBox(
               height: MediaQuery.of(context).size.height*2,
-              child: Container(margin: EdgeInsets.only(top: 5),child: const Align(alignment: Alignment.topCenter, child: CircularProgressIndicator(backgroundColor: Colors.cyanAccent,))),
+              child: Container(margin: EdgeInsets.only(top: 10),child: const Align(alignment: Alignment.topCenter, child: CircularProgressIndicator(backgroundColor: Colors.cyanAccent,))),
             );
           }
           if(snapshot.hasError){
@@ -164,7 +164,7 @@ class _SearchTrips extends State<SearchTrips>{
                   _data.value2=newValue;
                 });
               },
-              items: _buildCategoriesMenuItems(snapshot.data),
+              items: _buildLinesMenuItems(snapshot.data),
               hint: Text('Selecciona una opción...'),
             );
           }
@@ -203,22 +203,22 @@ class _SearchTrips extends State<SearchTrips>{
   submit(){
     if(this._fromKey.currentState.validate()){
       this._fromKey.currentState.save();
-
+      var publication="${_data.date.year}-${_data.date.month}-${_data.date.day}";
+      var inputAux2=_data.value2;
       print('Printing the login data.');
       print('Filtro1: ${_data.filter1}');
       print('Valor 1: ${_data.value1}');
       print('Filtro2: ${_data.filter2}');
-      print('Valor 2: ${_data.value2}');
-      print('Fecha: ${_data.date}');
+      print('Valor 2: ${_data.value2} => ${inputAux2}');
+      print('Fecha: $publication');
 
       Route route = MaterialPageRoute(builder: (context) => ArticleListTrips(
-        filter1: _data.filter1=='Titulo'?'title':'category',
-        value1: _data.value1,
-        filter2: _data.filter2=='Línea de Investigación'?'line':'author',
-        value2: _data.value2,
+        filter1: _data.filter1=='Título'?'title':'category_id',
+        value1: _data.filter1=='Título'?'"${_data.value1}"':_data.value1,
+        filter2: _data.filter2=='Autor'?'author':'line_id',
+        value2: _data.filter2=='Autor'?'"${inputAux2}"':inputAux2,
+        publication:publication
       ));
-      _data.value1=null;
-      _data.value2=null;
       Navigator.of(context).push(route);
     }
   }
@@ -251,12 +251,13 @@ class _SearchTrips extends State<SearchTrips>{
                     color: Colors.indigo,
                   ),
                   onChanged: (String newValue){
+                    if(newValue=='Título'){
+                      viewTextInput1=true;
+                    }else{
+                      if(_data.filter1!=newValue) _data.value1=null;
+                      viewTextInput1=false;
+                    }
                     setState(() {
-                      if(newValue=='Título'){
-                        viewTextInput1=true;
-                      }else{
-                        viewTextInput1=false;
-                      }
                       _data.filter1=newValue;
                     });
                   },
@@ -277,12 +278,13 @@ class _SearchTrips extends State<SearchTrips>{
                     color: Colors.indigo,
                   ),
                   onChanged: (String newValue){
+                    if(newValue=='Autor'){
+                      viewTextInput2=true;
+                    }else{
+                      if(_data.filter2!=newValue) _data.value2=null;
+                      viewTextInput2=false;
+                    }
                     setState(() {
-                      if(newValue=='Autor'){
-                        viewTextInput2=true;
-                      }else{
-                        viewTextInput2=false;
-                      }
                       _data.filter2=newValue;
                     });
                   },

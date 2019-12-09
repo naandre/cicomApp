@@ -10,12 +10,13 @@ class ArticleList extends StatefulWidget{
   String value1;
   String filter2;
   String value2;
+  String publication;
 
-  ArticleList({this.filter1,this.value1,this.filter2,this.value2});
+  ArticleList({this.filter1,this.value1,this.filter2,this.value2,this.publication});
 
   @override
   State<StatefulWidget> createState() {
-    return _handleState(filter1: this.filter1,value1: this.value1,filter2: this.value2);
+    return _handleState(filter1: this.filter1,value1: this.value1,filter2: this.filter2,value2: this.value2,publication:this.publication);
   }
 }
 
@@ -25,8 +26,9 @@ class _handleState extends State<ArticleList>{
   String value1;
   String filter2;
   String value2;
+  String publication;
 
-  _handleState({this.filter1,this.value1,this.filter2,this.value2});
+  _handleState({this.filter1,this.value1,this.filter2,this.value2,this.publication});
 
   GraphQLConfiguration graphQLConfiguration=GraphQLConfiguration();
 
@@ -38,7 +40,7 @@ class _handleState extends State<ArticleList>{
   Future<List<Map<String, dynamic>>> queryArticles() async{
     QueryMutation queryMutation=QueryMutation();
     GraphQLClient _client=graphQLConfiguration.clientToQuery();
-    final QueryResult data= await _client.query(QueryOptions(document: queryMutation.getArticles(filter1: this.filter1,value1: this.value1,filter2: this.filter2,value2: this.value2)));
+    final QueryResult data= await _client.query(QueryOptions(document: queryMutation.getArticles(filter1: this.filter1,value1: this.value1,filter2: this.filter2,value2: this.value2,publication: this.publication)));
     final List<Map<String, dynamic>> articles= data.data['articleFilter'].cast<Map<String, dynamic>>();
     return articles;
   }
