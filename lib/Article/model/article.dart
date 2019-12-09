@@ -1,10 +1,11 @@
 
+import 'package:cicom/Article/model/authors.dart';
+
 class ArticleModel{
   /* Mapeo del modelo */
   ArticleModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         title= json['title'],
-//        authors= "Autor 1, autor 2",
         authors= json['authors'],
         description= json['description'],
         file= json['file']
@@ -19,13 +20,15 @@ class ArticleModel{
   final String file;
 
   String authorsToString(){
-//    String authorString="";
-//    print(this.authors[0]);
-//    for(var author in this.authors){
-//      authorString+=author.name+", ";
-//    }
-    return "Autor 1, autor 2";
-//    return authorString;
+    String authorString="";
+    for(var author in this.authors){
+      print("cargando autor ...");
+      final Author authorModel=Author.fromJson(author);
+      authorString+=authorModel.name+", ";
+    }
+    print(authorString);
+//    return "Autor 1, autor 2";
+    return authorString;
   }
 
 }
