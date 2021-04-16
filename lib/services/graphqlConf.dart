@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class GraphQLConfiguration {
 
   static HttpLink httpLink = HttpLink(
-    uri: "http://cicom.miscursosweb.com.co/graphql",
+    uri: "https://rita.udistrital.edu.co/cicom/public/graphql",
   );
 
   ValueNotifier<GraphQLClient> client = ValueNotifier(

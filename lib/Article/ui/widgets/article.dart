@@ -93,7 +93,7 @@ class Article extends StatelessWidget{
     );
 
     return InkWell(
-      onTap: (){launch("http://cicom.miscursosweb.com.co/public/public/files/articles/${this.file}");},
+      onTap: (){launch("https://rita.udistrital.edu.co/cicom/public/public/files/articles/${this.file}");},
       child: Column(
         children: <Widget>[
           articleDetail,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GradientBack extends StatelessWidget{
 
   String title="Cicom";
-  double heightGradient=250;
+  double heightGradient=300;
 
   GradientBack(this.title,this.heightGradient);
 //backgroundImage: NetworkImage(snapshot.data[index].thumbnailUrl),
@@ -14,8 +14,8 @@ class GradientBack extends StatelessWidget{
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Color(0xFF0288D1),
-            Color(0xFF01579B),
+            Color(0xFF0B2253),
+            Color(0xFF3489DB),
           ],
           begin: FractionalOffset(0.2,0.0),
           end: FractionalOffset(1.0,0.6),

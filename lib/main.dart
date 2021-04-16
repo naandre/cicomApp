@@ -1,8 +1,8 @@
-import 'package:cicom/User/bloc/bloc_user.dart';
+//import 'package:cicom/User/bloc/bloc_user.dart';
 import 'package:cicom/services/graphqlConf.dart';
 import 'package:cicom/widgets/menu_trips_cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+//import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() => runApp(MyApp());

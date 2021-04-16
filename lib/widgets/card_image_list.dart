@@ -40,7 +40,7 @@ class _handleState extends State<CardImageList>{
         scrollDirection: Axis.horizontal,
         children: page.map<Widget>((Map<String, dynamic> item){
           final ImageBanner imageBanner=ImageBanner.fromJson(item);
-          return CardImage("http://cicom.miscursosweb.com.co/public/public/files/images/${imageBanner.image}");
+          return CardImage("https://rita.udistrital.edu.co/cicom/public/public/files/images/${imageBanner.image}");
         }).toList(),
       ),
     );

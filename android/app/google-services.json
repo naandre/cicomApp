@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "146766686626",
+    "project_id": "cicom-b1ee8",
+    "storage_bucket": "cicom-b1ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146766686626:android:3520ff89d31c71211faafb",
+        "android_client_info": {
+          "package_name": "com.nacmeles.cicom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146766686626-tdlq5gl5vi5vjs5pl1npkcuhs7ia7bmg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiUfnsb6zKlEqXSehlT3o6s4UNbXmFl50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146766686626-tdlq5gl5vi5vjs5pl1npkcuhs7ia7bmg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

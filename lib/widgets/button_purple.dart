@@ -13,7 +13,7 @@ class ButtonPurple extends StatelessWidget {
       onTap: (){
         Scaffold.of(context).showSnackBar(
             SnackBar(
-                content: Text("Hola, Bienbenido a Cicom App")
+                content: Text("Hola, Bienvenido a Cicom App")
             )
         );
       },

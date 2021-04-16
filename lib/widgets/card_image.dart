@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CardImage extends StatelessWidget{
 
-  String urlImage="http://cicom.miscursosweb.com.co/public/public/files/images/cicom-cicom2019-1570401647426930469.png";
+  String urlImage="https://rita.udistrital.edu.co/cicom/public/public/files/images/cicom-cicom2019-1570401647426930469.png";
 
   CardImage(this.urlImage);
   
@@ -18,7 +18,7 @@ class CardImage extends StatelessWidget{
       ),
       decoration: BoxDecoration(
         image: DecorationImage(
-          fit: BoxFit.fitWidth,
+          fit: BoxFit.fill,
           image: NetworkImage(urlImage)
         ),
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
