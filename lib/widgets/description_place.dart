@@ -71,7 +71,7 @@ ___________________________________________________________________
                   color: Colors.blue
               ),
               recognizer: TapGestureRecognizer()
-                ..onTap=(){launch("https://rita.udistrital.edu.co/cicom/public/public/files/images/cicom-cicom2019-1570401647426930469.png/public/public/files/lastcongress/${this.file}");}
+                ..onTap=(){launch("https://rita.udistrital.edu.co/cicom/public/public/files/lastcongress/${this.file}");}
             ),
           ]
         ),
